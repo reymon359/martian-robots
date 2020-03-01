@@ -6,18 +6,14 @@ const rl = readline.createInterface({
 });
 
 const getInput = () => {
-    const lines = [];
-
     promptWellcome();
 
     return new Promise((resolve, reject) => {
-        rl.on('line', function(line) {
+        const lines = [];
+
+        rl.on('line', line => {
             line = line.trim();
-            if (line) {
-                lines.push(line);
-            } else {
-                rl.close();
-            }
+            line ? lines.push(line) : rl.close();
         });
 
         rl.on('close', () => {

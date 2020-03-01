@@ -1,10 +1,8 @@
 const getMissionInfo = input => {
     const lines = input.split('\n');
-    const map = getMapDimensions(lines.shift());
-    const robots = getRobots(lines);
     return {
-        map,
-        robots
+        map:getMapDimensions(lines.shift()),
+        robots:getRobots(lines)
     };
 };
 

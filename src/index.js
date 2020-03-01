@@ -1,8 +1,10 @@
 const cli = require('./utils/cli');
+const transcriber = require('./utils/transcriber')
 
-const getMission = async () => {
+const startMission = async () => {
     const input = await cli.getInput();
-    console.log('input', input);
+    const missionInfo = transcriber.getMissionInfo(input);
+    console.log(missionInfo);
 };
 
-getMission();
+startMission();

@@ -29,5 +29,7 @@ const getRobots = lines => {
 };
 
 module.exports = {
-    getMissionInfo
+    getMissionInfo,
+    getMapDimensions,
+    getRobots
 };

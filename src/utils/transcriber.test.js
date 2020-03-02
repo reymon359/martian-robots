@@ -46,4 +46,13 @@ describe('transcriber', () => {
         expect(robotsFormated).toEqual(mockRobotsFormated);
         expect(robotsFormated.length).toEqual(mockRobotsFormated.length);
     });
+
+    it('should adapt mission results for output, when adapting mission results', () => {
+        const mockMissionResults = [[1, 1, 'E', false]];
+        const mockOutput = '1 1 E';
+
+        const output = transcriber.adaptMissionResults(mockMissionResults);
+
+        expect(output).toEqual(mockOutput);
+    });
 });

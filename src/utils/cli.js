@@ -27,8 +27,8 @@ const promptWellcome = () => {
     rl.prompt();
 };
 
-const reportResults = missionResults => {
-    console.log(missionResults);
+const sendOutput = output => {
+    console.log(output);
 };
 
 module.exports = {

@@ -29,8 +29,19 @@ const getRobots = lines => {
     return robots;
 };
 
+const adaptMissionResults = missionResults => {
+    return missionResults
+        .map(result => {
+            return `${result[0]} ${result[1]} ${result[2]}${
+                result[3] ? ' LOST' : ''
+            }`;
+        })
+        .join('\n');
+};
+
 module.exports = {
     getMissionInfo,
     getMapDimensions,
-    getRobots
+    getRobots,
+    adaptMissionResults
 };

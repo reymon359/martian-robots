@@ -33,5 +33,6 @@ const sendOutput = output => {
 
 module.exports = {
     getInput,
-    promptWellcome
+    promptWellcome,
+    sendOutput
 };

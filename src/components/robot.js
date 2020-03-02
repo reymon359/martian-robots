@@ -23,17 +23,18 @@ const nextPosition = position => {
         default:
             return position;
     }
+   
 };
 
-const isOutsideOfPlanet = (coords, planet) =>
-    coords.x > planet.length ||
-    coords.x < 0 ||
-    coords.y > planet[0].length ||
-    coords.y < 0;
+const isOutsideOfPlanet = (position, planet) =>
+    position.x > planet.length ||
+    position.x < 0 ||
+    position.y > planet[0].length ||
+    position.y < 0;
 
 const moveFront = (robot, planet) => {
+    
     const newPosition = nextPosition(robot.position);
-
     if (isOutsideOfPlanet(newPosition, planet)) {
         if (!planet[robot.position.x][robot.position.y]) {
             planet[robot.position.x][robot.position.y] = true;

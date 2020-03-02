@@ -19,6 +19,7 @@ const executeMission = missionInfo => {
                 planet = updatedRobotAndPlanet.planet;
             }
         });
+       
     });
 
     return obtainMissionResults(missionInfo.robots);

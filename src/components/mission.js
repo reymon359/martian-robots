@@ -19,13 +19,19 @@ const executeMission = missionInfo => {
                 planet = updatedRobotAndPlanet.planet;
             }
         });
-       
     });
-
     return obtainMissionResults(missionInfo.robots);
 };
 
-const obtainMissionResults = robots => {};
+const obtainMissionResults = robots => {
+    return robots.map(robot => [
+        robot.position.x,
+        robot.position.y,
+        robot.position.o,
+        robot.lost
+    ]);
+};
+
 module.exports = {
     executeMission
 };

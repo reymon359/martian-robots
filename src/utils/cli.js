@@ -27,6 +27,10 @@ const promptWellcome = () => {
     rl.prompt();
 };
 
+const reportResults = missionResults => {
+    console.log(missionResults);
+};
+
 module.exports = {
     getInput,
     promptWellcome

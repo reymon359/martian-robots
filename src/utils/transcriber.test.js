@@ -1,9 +1,10 @@
 const transcriber = require('./transcriber');
 
 describe('transcriber', () => {
-    it('should get Mission info right', () => {
+    it('should get Mission info right, when user submits input', () => {
+        // Arrange
         const mockUserInput = '5 3\n1 1 E\nRFRFRFRF';
-        const mockUserOutput = {
+        const mockMissionInfo = {
             map: { width: 5, height: 3 },
             robots: [
                 {
@@ -13,30 +14,36 @@ describe('transcriber', () => {
                 }
             ]
         };
-        expect(transcriber.getMissionInfo(mockUserInput)).toEqual(
-            mockUserOutput
-        );
+
+        // Act
+        const missionInfo = transcriber.getMissionInfo(mockUserInput);
+
+        // Assert
+        expect(missionInfo).toEqual(mockMissionInfo);
     });
 
-    it('should get map dimensions right', () => {
+    it('should get map dimensions right, when transcriber transcribes line', () => {
         const mockMapLine = '5 3';
-        const mockMapOutput = { width: 5, height: 3 };
-        expect(transcriber.getMapDimensions(mockMapLine)).toEqual(
-            mockMapOutput
-        );
+        const mockMapDimensions = { width: 5, height: 3 };
+
+        const mapDimensions = transcriber.getMapDimensions(mockMapLine);
+
+        expect(mapDimensions).toEqual(mockMapDimensions);
     });
 
-    it('should get robots right', () => {
+    it('should format robots right, when transcriber transcribes robots info lines', () => {
         const mockRobotsLines = ['1 1 E', 'RFRFRFRF'];
-        const mockRobotsOutput = [
+        const mockRobotsFormated = [
             {
                 coords: { x: 1, y: 1 },
                 orientation: 'E',
                 instructions: ['R', 'F', 'R', 'F', 'R', 'F', 'R', 'F']
             }
         ];
-        expect(transcriber.getRobots(mockRobotsLines)).toEqual(
-            mockRobotsOutput
-        );
+
+        const robotsFormated = transcriber.getRobots(mockRobotsLines);
+
+        expect(robotsFormated).toEqual(mockRobotsFormated);
+        expect(robotsFormated.length).toEqual(mockRobotsFormated.length);
     });
 });

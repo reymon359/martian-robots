@@ -9,10 +9,6 @@ const createPlanet = mapDimensions => {
     return planet;
 };
 
-const checkScent = (coords, map) => {};
-
-const setScent = (coords, map) => {};
-
 module.exports = {
     createPlanet
 };

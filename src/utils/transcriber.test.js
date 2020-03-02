@@ -8,8 +8,8 @@ describe('transcriber', () => {
             map: { width: 5, height: 3 },
             robots: [
                 {
-                    coords: { x: 1, y: 1 },
-                    orientation: 'E',
+                    position: { x: 1, y: 1, o: 'E' },
+                    lost: false,
                     instructions: ['R', 'F', 'R', 'F', 'R', 'F', 'R', 'F']
                 }
             ]
@@ -35,8 +35,8 @@ describe('transcriber', () => {
         const mockRobotsLines = ['1 1 E', 'RFRFRFRF'];
         const mockRobotsFormated = [
             {
-                coords: { x: 1, y: 1 },
-                orientation: 'E',
+                position: { x: 1, y: 1, o: 'E' },
+                lost: false,
                 instructions: ['R', 'F', 'R', 'F', 'R', 'F', 'R', 'F']
             }
         ];

@@ -20,6 +20,7 @@ const executeMission = missionInfo => {
             }
         });
     });
+
     return obtainMissionResults(missionInfo.robots);
 };
 
@@ -33,5 +34,6 @@ const obtainMissionResults = robots => {
 };
 
 module.exports = {
-    executeMission
+    executeMission,
+    obtainMissionResults
 };

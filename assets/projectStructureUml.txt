@@ -1,0 +1,49 @@
+@startuml
+
+object Index {
+    +martianRobots()
+}
+package Utils <<Folder>>{
+    object Transcriber {
+        +getMissionInfo()
+        +getMapDimensions()
+        +getRobots()
+        +adaptMissionResults()
+    }
+
+    object Cli {
+        +getInput()
+        +promptWellcome()
+        +sendOutput()
+    }
+    
+}
+
+package Components <<Folder>>{
+
+    object Mission {
+        +executeMission()
+        +obtainMissionResults()
+    }
+    
+    object Map {
+        +createPlanet()
+    }
+    
+    object Robot {
+        +turnLeft()
+        +turnRight()
+        +nextPosition()
+        +isOutsideOfPlanet()
+        +moveFront()
+    }
+
+}
+
+Index *-down- Transcriber
+Index *-down- Cli
+Index *-down- Mission
+Mission *-down- Map
+Mission *-down- Robot
+
+@enduml
